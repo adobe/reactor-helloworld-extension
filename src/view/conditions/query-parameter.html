@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Condition</title>
+
+  <link rel="stylesheet" href="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/css/coral.css">
+  <link rel="stylesheet" href="../global.css">
+
+  <script>
+    window.Coral = window.Coral || {};
+    Coral.options = { typeKitId: 'buj6cmr'};
+  </script>
+
+  <script src="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/js/libs/jquery.js"></script>
+  <script src="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/js/coral.js"></script>
+</head>
+<body class="coral--light">
+  <form>
+    <section>
+      <label class="u-gapRight">
+        <span class="label">Query Parameter Name</span>
+        <input is="coral-textfield" id="name" class="coral-Form-field">
+      </label>
+      <label>
+        <span class="label">Query Parameter Value</span>
+        <input is="coral-textfield" id="value" class="coral-Form-field">
+      </label>
+    </section>
+  </form>
+
+  <script src="//assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+  <script>
+    window.extensionBridge.register({
+      init: function(info) {
+        document.getElementById('name').value =
+          (info.settings && info.settings.queryParam) || '';
+        document.getElementById('value').value =
+          (info.settings && info.settings.queryParamValue) || '';
+      },
+
+      getSettings: function() {
+        return {
+          queryParam: document.getElementById('name').value || '',
+          queryParamValue: document.getElementById('value').value || ''
+        };
+      },
+
+      validate: function() {
+        var nameField = document.getElementById('name');
+        var valueField = document.getElementById('value');
+
+        nameField.invalid = !nameField.value;
+        valueField.invalid = !valueField.value;
+
+        return !nameField.invalid && !valueField.invalid;
+      }
+    });
+  </script>
+</body>
+</html>

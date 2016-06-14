@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event</title>
+
+  <link rel="stylesheet" href="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/css/coral.css">
+  <link rel="stylesheet" href="../global.css">
+  <script>
+    window.Coral = window.Coral || {};
+    Coral.options = { typeKitId: 'buj6cmr'};
+  </script>
+
+  <script src="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/js/libs/jquery.js"></script>
+  <script src="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/js/coral.js"></script>
+</head>
+<body class="coral--light">
+  <form>
+    <label>
+      <span class="label">Delay</span>
+      <input is="coral-textfield" id="delay" class="coral-Form-field">
+    </label>
+  </form>
+
+  <script src="//assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+  <script>
+    window.extensionBridge.register({
+      init: function(info) {
+        document.getElementById('delay').value = (info.settings && info.settings.delay) || 1000;
+      },
+
+      getSettings: function() {
+        return {
+          delay: Number(document.getElementById('delay').value)
+        };
+      },
+
+      validate: function() {
+        var delayField = document.getElementById('delay');
+        var delay = Number(delayField.value);
+        delayField.invalid = isNaN(delay) || delay < 1;
+        return !delayField.invalid;
+      }
+    });
+  </script>
+</body>
+</html>

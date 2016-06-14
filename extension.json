@@ -1,0 +1,73 @@
+{
+  "displayName": "Hello World",
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Hello World extension",
+  "author": {
+    "name": "Adobe Systems Incorporated",
+    "url": "http://adobe.com",
+    "email": "reactor@adobe.com"
+  },
+  "viewBasePath": "src/view/",
+  "events": [{
+    "name": "delay",
+    "displayName": "Delay",
+    "libPath": "src/lib/events/delay.js",
+    "viewPath": "events/delay.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "delay": {
+          "type": "number",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "delay"
+      ],
+      "additionalProperties": false
+    }
+  }],
+  "conditions": [{
+    "name": "query-parameter",
+    "displayName": "Query Parameter",
+    "libPath": "src/lib/conditions/query-parameter.js",
+    "viewPath": "conditions/query-parameter.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "queryParam": {
+          "type": "string",
+          "minLength": 1
+        },
+        "queryParamValue": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "queryParam",
+        "queryParamValue"
+      ],
+      "additionalProperties": false
+    }
+  }],
+  "actions": [{
+    "name": "alert",
+    "displayName": "Alert",
+    "libPath": "src/lib/actions/alert.js",
+    "viewPath": "actions/alert.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }]
+}
