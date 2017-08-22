@@ -3,7 +3,7 @@
   "name": "hello-world",
   "version": "1.0.0",
   "description": "Hello World extension",
-  "iconPath": "resources/icons/Use_Your_Own_Logo.svg"
+  "iconPath": "resources/icons/Use_Your_Own_Logo.svg",
   "author": {
     "name": "Adobe Systems Incorporated",
     "url": "http://adobe.com",
