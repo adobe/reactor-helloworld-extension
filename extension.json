@@ -2,7 +2,7 @@
   "displayName": "Hello World",
   "name": "hello-world",
   "version": "1.0.0",
-  "description": "Hello World extension",
+  "description": "Greets users in a friendly fashion.",
   "iconPath": "resources/icons/Use_Your_Own_Logo.svg",
   "author": {
     "name": "Adobe Systems Incorporated",
