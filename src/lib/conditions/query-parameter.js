@@ -1,7 +1,8 @@
 'use strict';
 
-var getQueryParam = require('@turbine/get-query-param');
+var queryString = require('@adobe/reactor-query-string');
 
 module.exports = function(settings) {
-  return settings.queryParamValue === getQueryParam(settings.queryParam);
+  var queryParams = queryString.parse(location.search);
+  return settings.queryParamValue === queryParams[settings.queryParam];
 };
