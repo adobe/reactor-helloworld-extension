@@ -5,6 +5,7 @@ body {
 .label {
   line-height: 36px;
   margin-right: 8px;
+  font: bold 12px sans-serif;
 }
 
 .u-gapRight {
