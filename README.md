@@ -6,7 +6,17 @@ For more information regarding Launch, please visit our [product website](http:/
 
 For more information regarding Launch extension development, please visit our [developer documentation](http://developer.adobelaunch.com/guides/extensions/). Note the [Scaffold tool](https://www.npmjs.com/package/@adobe/reactor-scaffold) and [Extension Sandbox](https://www.npmjs.com/package/@adobe/reactor-sandbox) will be helpful in developing your own Launch extension.
 
-## Development Setup
-1. Install [node.js](https://nodejs.org/). Make sure you have at least [npm v4.0](https://docs.npmjs.com/getting-started/installing-node#updating-npm) installed.
-2. Clone this repository.
-3. Start the sandbox task by running `npx @adobe/reactor-sandbox`.
+## Development
+
+### Running the sandbox
+Before running the sandbox, you must first have [Node.js](https://nodejs.org/en/) installed on your computer. Your npm version (npm comes bundled with Node.js) will need to be at least 5.2.0. You can check the installed version by running the following command from a command line:
+
+```
+npm -v
+```
+
+Once Node.js is installed, run the sandbox by executing the following command from the command line within your project's directory:
+
+```
+npx @adobe/reactor-sandbox
+```
